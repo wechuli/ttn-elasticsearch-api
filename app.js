@@ -3,7 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const mainRoute = require('./routes/mainRoute')
+const mainRoute = require("./routes/mainRoute");
 
 const app = express();
 
@@ -14,17 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
-
 //routes
 
-app.use('/api/v1',mainRoute);
-
+app.use("/api/v1", mainRoute);
 
 app.use((req, res) => {
   res.status(404).json({ error: "Page unaivalable" });
 });
 
-
-app.listen(8080,()=>{
-    console.info('The app has started on port 8080')
-})
+app.listen(8080, () => {
+  console.info("The app has started on port 8080");
+});

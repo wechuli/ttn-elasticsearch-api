@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   const data = req.body;
+  console.log(data);
+  
   try {
     const response = await client.index({
       index: "iotdata",
