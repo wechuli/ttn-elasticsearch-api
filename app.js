@@ -19,9 +19,10 @@ app.use(morgan("dev"));
 app.use("/api/v1", mainRoute);
 
 app.use((req, res) => {
-  res.status(404).json({ error: "Page unaivalable" });
+    res.status(404).json({ error: "Page unaivalable" });
 });
 
-app.listen(8080, () => {
-  console.info("The app has started on port 8080");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.info(`The app has started on port ${PORT}`);
 });
