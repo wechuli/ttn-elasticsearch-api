@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   const data = req.body;
-  console.log(data);
+  // console.log(data);
   
   try {
     const response = await client.index({
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
       type: "all",
       body: data
     });
-    console.log(response);
+    // console.log(response);
     return res.status(200).json({ message: "all good" });
   } catch (error) {
     res.status(500).json(error);
