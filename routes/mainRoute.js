@@ -7,7 +7,7 @@ router
     .route("/")
     .post(async(req, res) => {
         const data = req.body;
-        console.log(data);
+        // console.log(data);
 
         try {
             const response = await client.index({
